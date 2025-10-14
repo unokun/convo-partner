@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useRealtimeWebRTC } from '../hooks/useRealtimeWebRTC';
 import { ConnectionButton } from './ConnectionButton';
 
@@ -9,16 +9,9 @@ export const ConvoPartner: React.FC = () => {
     isRecording,
     error,
     connect,
-    disconnect,
-    logs
+    disconnect
   } = useRealtimeWebRTC();
 
-  const logsEndRef = useRef<HTMLDivElement>(null);
-
-  // ログが更新されたら自動スクロール
-  useEffect(() => {
-    logsEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [logs]);
 
   const getConnectionStateColor = (state: RTCPeerConnectionState) => {
     switch (state) {
@@ -130,35 +123,6 @@ export const ConvoPartner: React.FC = () => {
           </div>
         )}
 
-        {/* ログ表示エリア */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">ログ</h2>
-
-          <div className="bg-gray-900 rounded-lg p-4 h-96 overflow-y-auto font-mono text-sm">
-            {logs.length === 0 ? (
-              <div className="text-gray-500 text-center py-8">
-                接続するとログが表示されます
-              </div>
-            ) : (
-              <div className="space-y-1">
-                {logs.map((log, index) => (
-                  <div
-                    key={index}
-                    className={`
-                      ${log.includes('エラー') || log.includes('失敗') ? 'text-red-400' : ''}
-                      ${log.includes('完了') || log.includes('成功') || log.includes('確立') ? 'text-green-400' : ''}
-                      ${log.includes('接続中') || log.includes('開始') || log.includes('作成中') ? 'text-yellow-400' : ''}
-                      ${!log.includes('エラー') && !log.includes('失敗') && !log.includes('完了') && !log.includes('成功') && !log.includes('確立') && !log.includes('接続中') && !log.includes('開始') && !log.includes('作成中') ? 'text-gray-300' : ''}
-                    `}
-                  >
-                    {log}
-                  </div>
-                ))}
-                <div ref={logsEndRef} />
-              </div>
-            )}
-          </div>
-        </div>
 
         {/* 使い方の説明 */}
         <div className="mt-6 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
