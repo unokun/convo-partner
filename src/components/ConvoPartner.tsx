@@ -72,10 +72,10 @@ export const ConvoPartner: React.FC = () => {
         {/* ヘッダー */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            OpenAI Realtime API (WebRTC版)
+            会話アプリケーション
           </h1>
           <p className="text-gray-600">
-            WebRTCを使用した低遅延音声対話デモ
+            台本に沿って会話練習するアプリケーション
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-# OpenAI Realtime API (WebRTC版) デモアプリケーション
+# 会話アプリケーション
 
 WebRTCを使用した低遅延のOpenAI Realtime API音声対話デモアプリケーション。
 
