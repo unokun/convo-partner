@@ -72,37 +72,8 @@ export const ConvoPartner: React.FC = () => {
           </p>
         </div>
 
-        {/* 接続状態カード */}
+        {/* 接続ボタン */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">接続状態</h2>
-
-          <div className="space-y-3 mb-6">
-            {/* WebRTC接続状態 */}
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
-              <span className="font-medium text-gray-700">WebRTC:</span>
-              <span className={`font-semibold ${getConnectionStateColor(connectionState)}`}>
-                {getStatusIndicator(connectionState)} {connectionState}
-              </span>
-            </div>
-
-            {/* ICE接続状態 */}
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
-              <span className="font-medium text-gray-700">ICE:</span>
-              <span className={`font-semibold ${getIceStateColor(iceConnectionState)}`}>
-                {iceConnectionState}
-              </span>
-            </div>
-
-            {/* 録音状態 */}
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
-              <span className="font-medium text-gray-700">マイク:</span>
-              <span className={`font-semibold ${isRecording ? 'text-red-500' : 'text-gray-400'}`}>
-                {isRecording ? '🎤 録音中' : '停止中'}
-              </span>
-            </div>
-          </div>
-
-          {/* 接続ボタン */}
           <div className="flex justify-center">
             <ConnectionButton
               connectionState={connectionState}
