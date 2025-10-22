@@ -63,7 +63,7 @@ export const ConvoPartner: React.FC = () => {
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-4xl mx-auto">
         {/* ヘッダー */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+        <div className="bg-white rounded-lg shadow-md p-6 mb-6 text-center">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
             会話アプリケーション
           </h1>
