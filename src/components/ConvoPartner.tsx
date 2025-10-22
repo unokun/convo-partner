@@ -60,12 +60,6 @@ export const ConvoPartner: React.FC = () => {
                     <FontAwesomeIcon icon={faInfo} className="h-6 w-6 text-blue-500" />
                   </button>
                 </div>
-                <button
-                  className="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors shadow-md"
-                  aria-label="台本読み込み"
-                >
-                  台本読み込み
-                </button>
               </div>
             </div>
           </div>
