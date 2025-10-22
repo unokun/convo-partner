@@ -1,6 +1,10 @@
+<div align="center">
+
 # 会話アプリケーション
 
 WebRTCを使用した低遅延のOpenAI Realtime API音声対話デモアプリケーション。
+
+</div>
 
 ## 特徴
 
